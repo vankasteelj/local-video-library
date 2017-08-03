@@ -15,7 +15,9 @@ module.exports = class Library {
 
         this.trakt = new Trakt({
             client_id: traktId,
-            plugins: ['matcher']
+            plugins: {
+                matcher: require('trakt.tv-matcher')
+            }
         });
 
         this.parser = new Parser({
