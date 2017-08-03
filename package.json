@@ -9,9 +9,9 @@
         "url": "https://github.com/vankasteelj/local-video-library"
     },
     "dependencies": {
-        "library-parser": "0.x.x",
+        "library-parser": "1.x.x",
         "async": "2.x.x",
-        "trakt.tv": "3.x.x",
-        "trakt.tv-matcher": "*"
+        "trakt.tv": "5.x.x",
+        "trakt.tv-matcher": "5.x.x"
     }
 }
