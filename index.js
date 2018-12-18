@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
 const Parser = require('library-parser');
 const Trakt = require('trakt.tv');
 const async = require('async');
 
 module.exports = class Library {
-    constructor(traktId = String(), paths = Array(), debug) {
+    constructor(traktId = String(), paths = Array(), debug = false) {
         if (!traktId) throw Error('You need to pass a Trakt.tv client_id, see http://docs.trakt.apiary.io/');
         if (!paths.length) throw Error('At least one path is required');
         if (paths.constructor == String) paths = paths.split(',');
@@ -49,7 +49,7 @@ module.exports = class Library {
             queue.drain = () => { 
                 this.log('Matching process done: ' + this.matchedFiles.length + ' results with metadata (total is ' + files.length + ')');
                 resolve(this.matchedFiles.concat(this.unmatchedFiles));
-            }
+            };
 
             queue.push(files);
         });
@@ -61,7 +61,7 @@ module.exports = class Library {
             return callback();
         }
 
-        this.trakt.matcher.match(file).then((md = Object()) => {
+        this.trakt.matcher.match(file).then((md = {}) => {
             file.metadata = md;
 
             this.log((md.type ? 'Match' : 'No match') + ' found for ' + file.filename);
@@ -72,4 +72,4 @@ module.exports = class Library {
             this.unmatchedFiles.push(file);
         }).then(callback);
     }
-}
+};

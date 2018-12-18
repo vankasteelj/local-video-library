@@ -2,16 +2,16 @@
     "name": "local-video-library",
     "description": "build your local library object with automagic metadata grabbing",
     "author": "Jean van Kasteel",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/vankasteelj/local-video-library"
     },
     "dependencies": {
-        "library-parser": "1.x.x",
-        "async": "2.x.x",
-        "trakt.tv": "^5.x.x",
-        "trakt.tv-matcher": "^5.x.x"
+        "async": "^2.6.1",
+        "library-parser": "^1.1.0",
+        "trakt.tv": "^7.1.0",
+        "trakt.tv-matcher": "^7.x.x"
     }
 }

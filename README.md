@@ -14,8 +14,8 @@ const traktId = <trakt.tv client_id>;
 const paths = ['/foo/bar'];
 const debug = true;
 
-var Parser = require('local-video-library');
-var library = new Parser(traktId, paths, debug);
+const Parser = require('local-video-library');
+const library = new Parser(traktId, paths, debug);
 
 library.scan(paths).then((localLibrary) => {
     console.log('results', localLibrary);
